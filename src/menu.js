@@ -47,50 +47,27 @@ export class ContextMenu extends Menu {
   }
 
   #clickItemMenu() {
-    // this.el.addEventListener('click', (event) => {
-    //   const {target} = event;
-
-    //   checkItemValue('click', ClicksModule);
-    //   checkItemValue('background', BackgroundModule);
-    //   checkItemValue('shape', ShapeModule);
-    //   checkItemValue('message', MessageModule);
-    //   checkItemValue('sound', SoundModule);
-    //   checkItemValue('sound', TimerModule);
-
-    //   this.close();
-
-    //   function checkItemValue(itemEvent, obj) {
-    //     const itemDataValue = target.closest('.menu-item').getAttribute('data-value')
-    //     if(itemDataValue === itemEvent) {
-    //       const newObj = new obj(itemEvent);
-    //       newObj.trigger();
-    //       newObj.toHTML();
-    //     }
-    //   }
-    // })
-
-    let clickItem = (event) => {
+    this.el.addEventListener('click', (event) => {
       const {target} = event;
-
-      let checkItemValue = (itemEvent, obj) => {
-        const itemDataValue = target.closest('.menu-item').getAttribute('data-value')
-        if(itemDataValue === itemEvent) {
-          const newObj = new obj(itemEvent);
-          newObj.trigger();
-          newObj.toHTML();
-        }
-        this.close();
-        this.el.removeEventListener('click', clickItem)
-      }
 
       checkItemValue('click', ClicksModule);
       checkItemValue('background', BackgroundModule);
       checkItemValue('shape', ShapeModule);
       checkItemValue('message', MessageModule);
       checkItemValue('sound', SoundModule);
-      checkItemValue('timer', TimerModule);
-    }
+      checkItemValue('sound', TimerModule);
 
-    this.el.addEventListener('click', clickItem)
+      this.close();
+
+      function checkItemValue(itemEvent, obj) {
+        const itemDataValue = target.closest('.menu-item').getAttribute('data-value')
+        if(itemDataValue === itemEvent) {
+          const newObj = new obj(itemEvent);
+          newObj.trigger();
+          newObj.toHTML();
+        }
+      }
+
+    })
   }
 }
