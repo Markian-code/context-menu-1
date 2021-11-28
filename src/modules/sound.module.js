@@ -1,11 +1,11 @@
 import {Module} from '../core/module'
 
-export class ClicksModule extends Module {
+export class SoundModule extends Module {
   constructor(type) {
     super(type, 'text');
   }
 
   trigger() {
-    console.log('ClicksModule');
+    console.log('SoundModule');
   }
 }
