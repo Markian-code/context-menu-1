@@ -1,26 +1,31 @@
-import {Module} from '../core/module'
+import { Module } from "../core/module";
+import { random } from "./src/utils.js";
 
 export class ShapeModule extends Module {
-      // const divShape = document.createElement('div')
-      // divShape.className = 'shape'
-      // document.body.append(divShape)
-      // const shape = document.querySelector('.shape')
+  #shape;
 
-      getRandomShape() {
-            if (Math.random() <= 0.2){
-            divShape.className = "square";
-            }
-            else if (Math.random() <= 0.4){
-            divShape.className = "circle";
-            }
-            else if (Math.random() <= 0.6){
-            divShape.className = "rectangle";
-            }
-            else if (Math.random() <= 0.8){
-            divShape.className = "trapezoid";
-            }
-            else {
-            divShape.className = "triangle";
-            }
-      }
+  constructor(type) {
+    super(type, "text");
+    this.#shape;
+  }
+  trigger() {
+    const shapesArray = [
+      "square",
+      "circle",
+      "rectangle",
+      "trapezoid",
+      "triangle",
+    ];
+    this.#shape = document.createElement("div");
+        this.#shape.classList.add(shapesArray[random(1, shapesArray.length)]);
+        this.#shape.classList.add('figure');
+        
+  }
+  toHTML() {
+        document.body.append(this.#shape);
+        setTimeout(() => {
+              const shape = document.querySelector('.figure')
+              shape.remove()
+        }, 3000)
+  }
 }
