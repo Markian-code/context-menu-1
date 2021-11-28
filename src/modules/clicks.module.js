@@ -10,7 +10,7 @@ export class ClicksModule extends Module {
 
   trigger() {
     let countClick = ()=>{
-      document.body.addEventListener('click',(event)=>{
+      document.addEventListener('click',(event)=>{
           event.preventDefault()
           this.oneClick++
           })
