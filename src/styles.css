@@ -51,3 +51,49 @@ body {
   background: #00ffe1;
   color: #1b1a1a;
 }
+
+/* Shapes style */
+.trapezoid {
+	border-bottom: 100px solid rgb(119, 207, 116);
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	height: 0;
+	width: 100px;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid rgb(119, 207, 116);
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	background: rgb(119, 207, 116);
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+.square {
+	width: 100px;
+	height: 100px;
+	background: rgb(119, 207, 116);
+}
+
+.rectangle {
+	width: 200px;
+	height: 100px;
+	background:rgb(119, 207, 116);
+}
+
+/* timer */
+#timer-count {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

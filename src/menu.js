@@ -5,6 +5,7 @@ import { ShapeModule } from './modules/shape.module';
 import { MessageModule } from './modules/message.module';
 import { SoundModule } from './modules/sound.module';
 import { TimerModule } from './modules/timer.module';
+// import { random } from './utils.js';
 
 
 export class ContextMenu extends Menu {
@@ -55,7 +56,7 @@ export class ContextMenu extends Menu {
       checkItemValue('shape', ShapeModule);
       checkItemValue('message', MessageModule);
       checkItemValue('sound', SoundModule);
-      checkItemValue('sound', TimerModule);
+      checkItemValue('timer', TimerModule);
 
       this.close();
 
